@@ -1,5 +1,6 @@
 public class CardTester 
 {
+    //sync?????
     private static final int HEARTS = 0;
     private static final int DIAMONDS = 1;
     private static final int SPADES = 2;
