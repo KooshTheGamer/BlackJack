@@ -20,6 +20,24 @@ public class CardTester
 
         Card aceSpades = new Card(ACE, SPADES);
         System.out.println(aceSpades);
+        System.out.println(aceSpades.getValue());
+        
+        System.out.println(aceSpades.getSuitAsString());
+        System.out.println(aceSpades.getRankAsString());
+        
+        Card nine = new Card(9, DIAMONDS);
+        System.out.println(nine);
+        
+        System.out.println(nine.getRank());
+        System.out.println(nine.getValue());
+        
+        System.out.println("=======");
+        
+        for(int i = 2; i <= ACE; i++)
+        {
+            Card c = new Card(i, CLUBS);
+            System.out.println(c);
+        };
         
     }
 }
