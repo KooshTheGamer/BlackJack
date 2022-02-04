@@ -52,11 +52,9 @@ public class BlackJack
         System.out.println(deck.deal());
     }
     
-    public static void main(String[] args){
-        /*
-         * the following tests should succeed when you execute your code
-         * uncomment to test each.
-         */
+    public static void main(String[] args)
+    {
+       
          
          
         //CardTester();
