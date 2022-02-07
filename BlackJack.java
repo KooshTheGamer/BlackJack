@@ -12,27 +12,27 @@ public class BlackJack
     
     public static void CardTester() {
 
-    Card twoHearts = new Card(13, 0);
-    System.out.println(twoHearts);
+        Card twoHearts = new Card(13, 0);
+        System.out.println(twoHearts);
 
-    Card aceSpades = new Card(ACE, SPADES);
-    System.out.println(aceSpades);
-    System.out.println(aceSpades.getValue());
+        Card aceSpades = new Card(ACE, SPADES);
+        System.out.println(aceSpades);
+        System.out.println(aceSpades.getValue());
 
-    System.out.println(aceSpades.getSuitAsString());
-    System.out.println(aceSpades.getRankAsString());
+        System.out.println(aceSpades.getSuitAsString());
+        System.out.println(aceSpades.getRankAsString());
 
-    Card nine = new Card(9, DIAMONDS);
-    System.out.println(nine);
+        Card nine = new Card(9, DIAMONDS);
+        System.out.println(nine);
 
-    System.out.println(nine.getRank());
-    System.out.println(nine.getValue());
+        System.out.println(nine.getRank());
+        System.out.println(nine.getValue());
 
-    System.out.println("=======");
+        System.out.println("=======");
 
-    for (int i = 2; i <= ACE; i++) {
-        Card c = new Card(i, CLUBS);
-        System.out.println(c);
+        for (int i = 2; i <= ACE; i++) {
+            Card c = new Card(i, CLUBS);
+            System.out.println(c);
         }
     }
     
