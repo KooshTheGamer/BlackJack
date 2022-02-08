@@ -10,7 +10,8 @@ public class BlackJack
     private static final int KING = 13;
     private static final int ACE = 14;
     
-    public static void CardTester() {
+    public static void CardTester() 
+    {
     //thanks Koosh...
     
         Card twoHearts = new Card(13, 0);
@@ -31,13 +32,15 @@ public class BlackJack
     
         System.out.println("=======");
     
-        for (int i = 2; i <= ACE; i++) {
+        for (int i = 2; i <= ACE; i++) 
+        {
             Card c = new Card(i, CLUBS);
             System.out.println(c);
-            }
+        }
     }
     
-    public static void DeckTester(){
+    public static void DeckTester()
+    {
         
         Deck deck = new Deck();
         System.out.println("Deck before shuffling");
@@ -53,41 +56,43 @@ public class BlackJack
         System.out.println(deck.deal());
     }
     
-    	public static void HandTester(){
-        Hand h = new Hand();
-        Card c = new Card(10, SPADES);
-        Card c2 = new Card(5, SPADES);
+    // public static void HandTester()
+    // {
+    //     Hand h = new Hand();
+    //     Card c = new Card(10, SPADES);
+    //     Card c2 = new Card(5, SPADES);
         
-        h.addCard(c);
-        h.addCard(c2);
-        System.out.println(h);
-        System.out.println("Value: " + h.getValue());
-        System.out.println("Busted? " + h.busted());
+    //     h.addCard(c);
+    //     h.addCard(c2);
+    //     System.out.println(h);
+    //     System.out.println("Value: " + h.getValue());
+    //     System.out.println("Busted? " + h.busted());
         
-        Hand h2 = new Hand();
-        Card c3 = new Card(JACK, CLUBS);
-        Card c4 = new Card(ACE, HEARTS);
-        h2.addCard(c3);
-        h2.addCard(c4);
-        System.out.println(h2);
-        System.out.println(h2.hasBlackjack());
+    //     Hand h2 = new Hand();
+    //     Card c3 = new Card(JACK, CLUBS);
+    //     Card c4 = new Card(ACE, HEARTS);
+    //     h2.addCard(c3);
+    //     h2.addCard(c4);
+    //     System.out.println(h2);
+    //     System.out.println(h2.hasBlackjack());
         
-        Hand h3 = new Hand();
-        h3.addCard(c4);
-        h3.addCard(c3);
-        h3.addCard(c2);
-        System.out.println("=======");
-        System.out.println(h3);
-        System.out.println(h3.hasBlackjack());
-        System.out.println(h3.busted());
-        System.out.println(h3.getValue());
-        Card ace = new Card(ACE, SPADES);
-        h3.addCard(ace);
+    //     Hand h3 = new Hand();
+    //     h3.addCard(c4);
+    //     h3.addCard(c3);
+    //     h3.addCard(c2);
+    //     System.out.println("=======");
+    //     System.out.println(h3);
+    //     System.out.println(h3.hasBlackjack());
+    //     System.out.println(h3.busted());
+    //     System.out.println(h3.getValue());
+    //     Card ace = new Card(ACE, SPADES);
+    //     h3.addCard(ace);
         
-        System.out.println(h3.getValue());
-	}
+    //     System.out.println(h3.getValue());
+	// }
     
-    public static void main(String[] args){
+    public static void main(String[] args)
+    {
         /*
          * the following tests should succeed when you execute your code
          * uncomment to test each.
