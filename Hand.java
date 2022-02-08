@@ -40,7 +40,7 @@ public class Hand
      */
     public void addCard(Card c)
     {
-        
+        cards.add(c);
     }
     
     /**
@@ -55,7 +55,12 @@ public class Hand
      */
     public int getValue()
     {
-        
+        int handValue = 0;
+        for(int i = 0; i < cards.size(); i++)
+        {
+            handValue += cards.getValue();
+        }
+        return handValue;
     }
     
      /**
