@@ -58,7 +58,7 @@ public class BlackJack
          
          
         //CardTester();
-        //DeckTester();
+        DeckTester();
         
     }
 
