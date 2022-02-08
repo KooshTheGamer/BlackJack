@@ -100,12 +100,9 @@ public class BlackJack
          
          
         //CardTester();
-<<<<<<< HEAD
-        DeckTester();
-=======
         //DeckTester();
         //HandTester();
->>>>>>> ff3a834dcdf23181760879da4c21ece8a9dbbf06
+
         
     }
 }
