@@ -58,11 +58,24 @@ public class Hand
     public int getValue()
     {
         int handValue = 0;
+        int aces = 0;
         
         for(Card c: cards)
         {
             handValue += c.getValue();
+            
+            if (c.getRank() == ACE)
+            {
+                aces++;
+            }
         }
+
+        while(handValue > 21 && aces > 0)
+        {
+            handValue -= 10;
+            aces--;
+        }
+
         return handValue; 
     }
     
