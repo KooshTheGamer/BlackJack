@@ -29,7 +29,7 @@ public class Hand
      */
     public Hand()
     {
-        this.cards = new ArrayList<>();
+        cards = new ArrayList<>();
     }
     
      
@@ -42,6 +42,8 @@ public class Hand
     {
         cards.add(c);
     }
+    
+    
     
     /**
      * This returns the value of the hand as an integer.
@@ -56,22 +58,25 @@ public class Hand
     public int getValue()
     {
         int handValue = 0;
-        for(int i = 0; i < cards.size(); i++)
+        
+        for(Card c: cards)
         {
-            handValue += cards.getValue();
+            handValue += c.getValue();
         }
-        return handValue;
+        return handValue; 
     }
     
-     /**
+    /**
      * Return if this hand has a blackjack.
      * 
      * @return If the hand is a blackjack.
      */
+    
     public boolean hasBlackjack()
     {
-        
-    }
+        return getValue() == 21 && cards.size() == 2;
+    } 
+    
     
     
     
@@ -83,7 +88,7 @@ public class Hand
      */
     public boolean busted()
     {
-
+        return getValue() > 21;
     }
     
     /**
@@ -94,7 +99,7 @@ public class Hand
      */
     public boolean fiveCardCharlie()
     {
-        
+        return cards.size() == 5;
     }
     
     /**
@@ -103,7 +108,15 @@ public class Hand
      */
     public String toString()
     {
+        String output = "";
 
+        for(Card c: cards)
+        {
+            output += c + " ";
+        }
+        return += "(" + getValue() + ")";
+
+        return output;
     }
 
 }
