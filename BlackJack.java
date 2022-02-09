@@ -74,7 +74,7 @@ public class BlackJack
         h2.addCard(c3);
         h2.addCard(c4);
         System.out.println(h2);
-        System.out.println(h2.hasBlackjack());
+        System.out.println("Blackjack? " + h2.hasBlackjack());
         
         Hand h3 = new Hand();
         h3.addCard(c4);
@@ -82,8 +82,8 @@ public class BlackJack
         h3.addCard(c2);
         System.out.println("=======");
         System.out.println(h3);
-        System.out.println(h3.hasBlackjack());
-        System.out.println(h3.busted());
+        System.out.println("Blackjack? " + h3.hasBlackjack());
+        System.out.println("Busted?: " + h3.busted());
         System.out.println(h3.getValue());
         Card ace = new Card(ACE, SPADES);
         h3.addCard(ace);
@@ -101,7 +101,7 @@ public class BlackJack
          
         //CardTester();
         //DeckTester();
-        //HandTester();
+        HandTester();
 
         
     }
