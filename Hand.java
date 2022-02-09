@@ -114,7 +114,7 @@ public class Hand
         {
             output += c + " ";
         }
-        return += "(" + getValue() + ")";
+        output += "(" + getValue() + ")";
 
         return output;
     }
