@@ -1,3 +1,4 @@
+import java.nio.ReadOnlyBufferException;
 import java.util.*;
 
 public class BlackJack
@@ -52,7 +53,19 @@ public class BlackJack
      */
     private static String getPlayerMove()
     {
-        return ;
+        Scanner readLine = new Scanner(System.in);
+        String playerMove = readLine.nextLine();
+        System.out.println("What's your move? (Hit/Stand?) ");
+        
+        if (playerMove == ("Hit"))
+        {
+            playerMove = playerMove.toLowerCase();
+        }
+        elif (playerMove == ("Stand"))
+        {
+            playerMove = playerMove.toLowerCase();
+        }
+        return;
     }
     
     /**
