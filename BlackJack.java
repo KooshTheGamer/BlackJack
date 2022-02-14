@@ -55,17 +55,18 @@ public class BlackJack
     {
         Scanner readLine = new Scanner(System.in);
         String playerMove = readLine.nextLine();
-        System.out.println("What's your move? (Hit/Stand?) ");
-        
-        if (playerMove == ("Hit"))
+        System.out.println("What's your move? (hit/stand?) ");
+        while(true)
         {
-            playerMove = playerMove.toLowerCase();
-        }
-        elif (playerMove == ("Stand"))
-        {
-            playerMove = playerMove.toLowerCase();
-        }
-        return;
+            if(playerMove.equals("hit") || playerMove.equals("stand") )
+            {
+                return playerMove.toLowerCase();
+            }
+            else
+            {
+                return "Try again, invalid input";
+            }    
+        }    
     }
     
     /**
@@ -89,6 +90,7 @@ public class BlackJack
      */
     private static boolean playerTurn()
     {
+        
         return;
     }
     
