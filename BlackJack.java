@@ -78,7 +78,7 @@ public class BlackJack
     
     private static void dealerTurn(Hand dealer, Deck deck)
     {
-    
+        return
         
     }
     
@@ -88,7 +88,7 @@ public class BlackJack
      * 
      * Return whether or not the player busted.
      */
-    private static boolean playerTurn()
+    private static boolean playerTurn(Hand dealer, Deck deck)
     {
         
         return;
