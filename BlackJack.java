@@ -81,7 +81,7 @@ public class BlackJack
     
     private static void dealerTurn(Hand dealer, Deck deck)
     {
-        return
+        
         
     }
     
@@ -91,7 +91,7 @@ public class BlackJack
      * 
      * Return whether or not the player busted.
      */
-    private static boolean playerTurn(Hand dealer, Deck deck)
+    private static boolean playerTurn(Hand player, Deck deck)
     {
         String move = getPlayerMove();
         
@@ -99,7 +99,11 @@ public class BlackJack
         
         if(move.equals("hit"))
         {
-            player.addcard();
+            Card c = deck.deal();
+            System.out.println("You're card was: " + c);;
+            player.addcard(c);
+            System.out.println("Player's Hand");
+            System.out.println(player);
         }
 
         return;
