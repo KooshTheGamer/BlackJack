@@ -27,12 +27,14 @@ public class BlackJack
         Scanner readLine = new Scanner(System.in);  // Create a Scanner object
         double bankroll = STARTING_BANKROLL;
         System.out.println("Starting bankroll: " + bankroll);
-   
+        
         while(true)
         {
             bankroll = playRound(bankroll);
             
-            String playAgain = readLine.nextLine("Would you like to play again? (Y/N)");
+            String playAgain = readLine.nextLine();
+            System.out.println("Would you like to play again? (Y/N)");
+            readLine.close();
             if(playAgain.equalsIgnoreCase("N"))
             {
                 break;
@@ -56,11 +58,12 @@ public class BlackJack
         Scanner readLine = new Scanner(System.in);
         String playerMove = readLine.nextLine();
         System.out.println("What's your move? (hit/stand?) ");
+        readLine.close();
         while(true)
         {
-            if(playerMove.equals("hit") || playerMove.equals("stand") )
+            if(playerMove.equalsIgnoreCase("hit") || playerMove.equalsIgnoreCase("stand") )
             {
-                return playerMove.toLowerCase();
+                return playerMove;
             }
             else
             {
@@ -90,7 +93,15 @@ public class BlackJack
      */
     private static boolean playerTurn(Hand dealer, Deck deck)
     {
+        String move = getPlayerMove();
         
+        System.out.println("Move: " + move);
+        
+        if(move.equals("hit"))
+        {
+            player.addcard();
+        }
+
         return;
     }
     
