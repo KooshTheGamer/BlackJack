@@ -114,6 +114,24 @@ public class Hand
     {
         return cards.size() == 5;
     }
+
+    public void printDealerHand()
+    {
+        for(int i = 0; i < cards.size(); i++)
+        {
+            Card c = cards.get(i);
+
+            if(i == 0)
+            {
+                System.out.println("X ");
+            }
+            else
+            {
+                System.out.println(c + " " );
+            }
+            
+        }
+    }
     
     /**
      * Return a String representation of the hand, including showing
