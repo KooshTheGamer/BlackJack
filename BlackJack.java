@@ -131,7 +131,7 @@ public class BlackJack
         {
             Card c = deck.deal();
             System.out.println("You're card was: " + c);;
-            player.addcard(c);
+            player.addCard(c);
             System.out.println("Player's Hand");
             System.out.println(player);
 
@@ -144,6 +144,7 @@ public class BlackJack
         {
             return false;
         }
+        return false;
 
     }
     
