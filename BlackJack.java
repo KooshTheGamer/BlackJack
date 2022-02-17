@@ -35,7 +35,7 @@ public class BlackJack
             bankroll = playRound(bankroll);
             
             String playAgain = readLine.nextLine();
-            System.out.println("Would you like to play again? (Y/N)");
+            System.out.print("Would you like to play again? (Y/N)");
             readLine.close();
             if(playAgain.equalsIgnoreCase("N"))
             {
@@ -90,7 +90,7 @@ public class BlackJack
             int value = dealer.getValue();
             System.out.println("Dealer's hand has value " + value);
             readLine.nextLine();
-            System.out.println("Enter to continue...");
+            System.out.print("Enter to continue...");
             readLine.close();
             if(value < 17)
             {
@@ -222,10 +222,9 @@ public class BlackJack
     private static double playRound(double bankroll)
     {
         Scanner readLine = new Scanner(System.in);
-        String bet1 = readLine.nextLine();
+        int bet = readLine.nextInt();
         System.out.println("What is your bet? ");
-        readLine.close();
-        int bet = Integer.parseInt(bet1);
+        
         Deck deck = new Deck();
         deck.shuffle();
         
@@ -253,7 +252,7 @@ public class BlackJack
         }
 
         readLine.nextLine();
-        System.out.println("Enter for dealer turn...");
+        System.out.print("Enter for dealer turn...");
         readLine.close();
         dealerTurn(dealer, deck);
         
