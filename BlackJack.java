@@ -1,6 +1,8 @@
 import java.nio.ReadOnlyBufferException;
 import java.util.*;
 
+
+// stopped at 16:00
 public class BlackJack
 {
     private static final int HEARTS = 0;
@@ -19,7 +21,7 @@ public class BlackJack
     
     
     
-        /**
+    /**
      * Play the blackjack game. Initialize the bankroll and keep
      * playing rounds as long as the user wants to.
      */
@@ -56,19 +58,17 @@ public class BlackJack
     private static String getPlayerMove()
     {
         Scanner readLine = new Scanner(System.in);
-        String playerMove = readLine.nextLine();
-        System.out.println("What's your move? (hit/stand?) ");
-        readLine.close();
         while(true)
         {
+            String playerMove = readLine.nextLine();
+            System.out.println("What's your move? (hit/stand?) ");
+            readLine.close();
             if(playerMove.equalsIgnoreCase("hit") || playerMove.equalsIgnoreCase("stand") )
             {
                 return playerMove;
             }
-            else
-            {
-                return "Try again, invalid input";
-            }    
+            System.out.println("Try again, invalid input");
+            
         }    
     }
     
@@ -81,7 +81,37 @@ public class BlackJack
     
     private static void dealerTurn(Hand dealer, Deck deck)
     {
-        
+        while(true)
+        {
+            Scanner readLine = new Scanner(System.in);
+            System.out.println("Dealer's hand");
+            System.out.println(dealer);
+            
+            int value = dealer.getValue();
+            System.out.println("Dealer's hand has value " + value);
+            readLine.nextLine();
+            System.out.println("Enter to continue...");
+            
+            if(value < 17)
+            {
+                System.out.println("Dealer hits");
+                Card c = deck.deal();
+                dealer.addCard(c);
+                
+                System.out.println("Dealer card was " + c);
+                
+                if(dealer.busted())
+                {
+                    System.out.println("Dealer busted!");
+                    break;
+                }
+            }
+            else
+            {
+                System.out.println("Dealer stands.");
+                break;
+            }
+        }
         
     }
     
@@ -104,9 +134,19 @@ public class BlackJack
             player.addcard(c);
             System.out.println("Player's Hand");
             System.out.println(player);
+
+            if(player.busted())
+            {
+                return true;
+            }
+        }
+        else //chose stand 
+        {
+            return false;
         }
 
-        return;
+
+        
     }
     
 
@@ -121,7 +161,17 @@ public class BlackJack
      */
     private static boolean playerWins(Hand player, Hand dealer)
     {
-        return;
+        if(player.busted())
+        {
+            return false;
+        }
+        
+        if(dealer.busted())
+        {
+            return true;
+        }
+        
+        return player.getValue() > dealer.getValue();
     }
     
     
