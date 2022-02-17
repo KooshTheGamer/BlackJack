@@ -91,7 +91,7 @@ public class BlackJack
             System.out.println("Dealer's hand has value " + value);
             readLine.nextLine();
             System.out.println("Enter to continue...");
-            
+            readLine.close();
             if(value < 17)
             {
                 System.out.println("Dealer hits");
@@ -145,8 +145,6 @@ public class BlackJack
             return false;
         }
 
-
-        
     }
     
 
@@ -174,15 +172,41 @@ public class BlackJack
         return player.getValue() > dealer.getValue();
     }
     
-    
+    //checks if theres a tie if both player and dealer have the same val
+    private static boolean push(Hand player, Hand dealer)
+    {
+        return player.getValue() == dealer.getValue();
+    }
     /**
      * Find the winner between the player hand and dealer
      * hand. Return how much was won or lost.
      */
     private static double findWinner(Hand dealer, Hand player, int bet)
     {
-        return;
+        if(playerWins(player, dealer))
+        {
+            System.out.println("Player wins!");
+            
+            if(player.hasBlackjack())
+            {
+                return 1.5 * bet;
+            }
+            
+            return bet;
+        }
+        else if(push(player, dealer))
+        {
+            System.out.println("You push");
+            return 0;
+        }
+        else
+        {
+            System.out.println("Dealer wins");
+            return -bet;
+        }
     }
+
+    
     
         /**
      * This plays a round of blackjack which includes:
@@ -194,9 +218,51 @@ public class BlackJack
      * - Finding the winner
      */
      
-    private double playRound(double bankroll)
+    private static double playRound(double bankroll)
     {
-        return; 
+        Scanner readLine = new Scanner(System.in);
+        String bet1 = readLine.nextLine();
+        System.out.println("What is your bet? ");
+        readLine.close();
+        int bet = Integer.parseInt(bet1);
+        Deck deck = new Deck();
+        deck.shuffle();
+        
+        Hand player = new Hand();
+        Hand dealer = new Hand();
+        
+        player.addCard(deck.deal());
+        dealer.addCard(deck.deal());
+        player.addCard(deck.deal());
+        dealer.addCard(deck.deal());
+        
+        System.out.println("Player's Hand");
+        System.out.println(player);
+        
+        
+        System.out.println("Dealer's hand");
+        //System.out.println(dealer);????
+        dealer.printDealerHand();
+        
+        boolean playerBusted = playerTurn(player, deck);
+        
+        if(playerBusted)
+        {
+            System.out.println("You busted :(");
+        }
+
+        readLine.nextLine();
+        System.out.println("Enter for dealer turn...");
+        readLine.close();
+        dealerTurn(dealer, deck);
+        
+        double bankrollChange = findWinner(dealer, player, bet);
+        
+        bankroll += bankrollChange;
+        
+        System.out.println("New bankroll: " + bankroll);
+        
+        return bankroll;
     }
     
     
