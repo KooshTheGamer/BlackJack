@@ -34,9 +34,12 @@ public class BlackJack
         {
             bankroll = playRound(bankroll);
             
+            System.out.println("Would you like to play again? (Y/N)");
+            
             String playAgain = readLine.nextLine();
-            System.out.print("Would you like to play again? (Y/N)");
+            
             readLine.close();
+
             if(playAgain.equalsIgnoreCase("N"))
             {
                 break;
@@ -60,8 +63,9 @@ public class BlackJack
         Scanner readLine = new Scanner(System.in);
         while(true)
         {
-            String playerMove = readLine.nextLine();
             System.out.println("What's your move? (hit/stand?) ");
+            String playerMove = readLine.nextLine();
+            
             readLine.close();
             if(playerMove.equalsIgnoreCase("hit") || playerMove.equalsIgnoreCase("stand") )
             {
@@ -89,9 +93,9 @@ public class BlackJack
             
             int value = dealer.getValue();
             System.out.println("Dealer's hand has value " + value);
-            readLine.nextLine();
-            System.out.print("Enter to continue...");
-            readLine.close();
+            System.out.println("Enter to continue...");
+            try{System.in.read();}
+                    catch(Exception e){}
             if(value < 17)
             {
                 System.out.println("Dealer hits");
@@ -222,9 +226,10 @@ public class BlackJack
     private static double playRound(double bankroll)
     {
         Scanner readLine = new Scanner(System.in);
-        int bet = readLine.nextInt();
-        System.out.println("What is your bet? ");
         
+        System.out.println("What is your bet? ");
+        int bet = readLine.nextInt();
+
         Deck deck = new Deck();
         deck.shuffle();
         
@@ -248,17 +253,18 @@ public class BlackJack
         
         if(playerBusted)
         {
-            System.out.println("You busted :(");
+            System.out.println("You busted lol loser");
         }
+        System.out.println("Enter for dealer turn...");
+        try{System.in.read();}
+                catch(Exception e){}
 
-        readLine.nextLine();
-        System.out.print("Enter for dealer turn...");
-        readLine.close();
+
         dealerTurn(dealer, deck);
         
-        double bankrollChange = findWinner(dealer, player, bet);
+        double bankrollLossWin = findWinner(dealer, player, bet);
         
-        bankroll += bankrollChange;
+        bankroll += bankrollLossWin;
         
         System.out.println("New bankroll: " + bankroll);
         
