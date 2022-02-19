@@ -35,9 +35,7 @@ public class BlackJack
             bankroll = playRound(bankroll);
             
             System.out.println("Would you like to play again? (Y/N)");
-            
             String playAgain = readLine.nextLine();
-            
             readLine.close();
 
             if(playAgain.equalsIgnoreCase("N"))
@@ -63,6 +61,7 @@ public class BlackJack
         Scanner readLine = new Scanner(System.in);
         while(true)
         {
+            
             System.out.println("What's your move? (hit/stand?) ");
             String playerMove = readLine.nextLine();
             
@@ -229,7 +228,7 @@ public class BlackJack
         
         System.out.println("What is your bet? ");
         int bet = readLine.nextInt();
-
+        
         Deck deck = new Deck();
         deck.shuffle();
         
