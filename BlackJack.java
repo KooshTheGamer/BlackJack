@@ -126,28 +126,31 @@ public class BlackJack
      */
     private static boolean playerTurn(Hand player, Deck deck)
     {
-        String move = getPlayerMove();
-        
-        System.out.println("Move: " + move);
-        
-        if(move.equals("hit"))
+        while(true)
         {
-            Card c = deck.deal();
-            System.out.println("You're card was: " + c);;
-            player.addCard(c);
-            System.out.println("Player's Hand");
-            System.out.println(player);
-
-            if(player.busted())
+            String move = getPlayerMove();
+            // boolean a = false;
+            System.out.println("Move: " + move);
+            
+            if(move.equals("hit"))
             {
-                return true;
+                Card c = deck.deal();
+                System.out.println("You're card was: " + c);;
+                player.addCard(c);
+                System.out.println("Player's Hand");
+                System.out.println(player);
+
+                if(player.busted())
+                {
+                    return true;
+                }
+            }
+            else //chose stand 
+            {
+                return false;
             }
         }
-        else //chose stand 
-        {
-            return false;
-        }
-        return false;
+        
 
     }
     
@@ -254,8 +257,8 @@ public class BlackJack
             System.out.println("You busted lol loser");
         }
         System.out.println("Enter for dealer turn...");
-        try{System.in.read();}
-                catch(Exception e){}
+        // try{System.in.read();}
+        //         catch(Exception e){}
 
 
         dealerTurn(dealer, deck);
