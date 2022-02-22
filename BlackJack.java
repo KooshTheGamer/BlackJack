@@ -36,7 +36,7 @@ public class BlackJack
             
             System.out.println("Would you like to play again? (Y/N)");
             String playAgain = readLine.nextLine();
-            readLine.close();
+            //readLine.close();
 
             if(playAgain.equalsIgnoreCase("N"))
             {
@@ -65,7 +65,7 @@ public class BlackJack
             System.out.println("What's your move? (hit/stand?) ");
             String playerMove = readLine.nextLine();
             
-            readLine.close();
+            //readLine.close();
             if(playerMove.equalsIgnoreCase("hit") || playerMove.equalsIgnoreCase("stand") )
             {
                 return playerMove;
