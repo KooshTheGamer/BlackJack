@@ -7,30 +7,35 @@ public class Gradebook
     public static void main(String args[])
     {
         Scanner readLine = new Scanner(System.in);
-        HashMap<String, Double> gradebook = new HashMap<String, Double>();
-    
+        
+        System.out.println("How many students? ");
+        int numStudents = readLine.nextInt();
+        
 
-        while (true)
+        for(int i = 0; i < numStudents; i++)
         {
-            
-            System.out.println("New Student (type 'end' to end): ");
-            String newStudent =  readLine.nextLine();
-            if (newStudent == "end")
-            {
-                break;
-            }
-            else
-            {
-                System.out.println("Student Grade: ");
-                Double newGrade = readLine.nextDouble();
-                
-                gradebook.put(newStudent, newGrade);
-            
-                
-                
-            }
-    
+            System.out.println("Student" + i + "Grade: ");
         }
+        // {
+            
+        //     System.out.println("New Student (type 'end' to end): ");
+        //     String newStudent =  readLine.nextLine();
+        //     if (newStudent == "end")
+        //     {
+        //         break;
+        //     }
+        //     else
+        //     {
+        //         
+        //         Double newGrade = readLine.nextDouble();
+                
+                
+            
+                
+                
+        //     }
+    
+        // }
         
     }
 
