@@ -12,21 +12,22 @@ public class Gradebook
 
         while (true)
         {
-            String newStudent =  readLine.nextLine();
-            System.out.println("New Student (type 'end' to end): ");
             
+            System.out.println("New Student (type 'end' to end): ");
+            String newStudent =  readLine.nextLine();
             if (newStudent == "end")
             {
                 break;
             }
             else
             {
-                Double newGrade = readLine.nextDouble();
                 System.out.println("Student Grade: ");
+                Double newGrade = readLine.nextDouble();
+                
                 gradebook.put(newStudent, newGrade);
-
-
-                System.out.println()
+            
+                
+                
             }
     
         }
