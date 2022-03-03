@@ -28,17 +28,17 @@ public class Gradebook
         int lowestStudent = 0;
         for(int i = 0; i < gradebook.length; i++)
         {
-            if(gradebook[i] == lowestGrade)
+            if(lowestGrade == gradebook[i])
             {
                lowestStudent =  (i + 1);            
             }
         }
 
-        double highestGrade = lowest(gradebook);
+        double highestGrade = highest(gradebook);
         int highestStudent = 0;
         for(int i = 0; i < gradebook.length; i++)
         {
-            if(gradebook[i] == highestGrade)
+            if(highestGrade == gradebook[i])
             {
                highestStudent =  (i + 1);            
             }
@@ -51,6 +51,7 @@ public class Gradebook
         
     }
 
+    // This is 
     public static double average(double[] gradebook)
     {
         double total = 0;
@@ -67,21 +68,22 @@ public class Gradebook
         double lowest = gradebook[0];
         for(int i = 0; i < gradebook.length; i++)
         {
-            if(lowest <= gradebook[i])
+            if(lowest < gradebook[i])
             {
                 lowest = gradebook[i];
-            {}
+            }
+
+            
         }
         return lowest;
     }
-
 
     public static double highest(double[] gradebook)
     {
         double highest = gradebook[0];
         for(int i = 0; i < gradebook.length; i++)
         {
-            if(gradebook[i] >= highest)
+            if(gradebook[i] > highest)
             {
                 highest = gradebook[i];
             }
