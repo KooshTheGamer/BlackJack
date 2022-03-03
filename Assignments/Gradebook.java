@@ -22,9 +22,20 @@ public class Gradebook
             
         }
 
+        
+
+        double lowestGrade = lowest(gradebook);
+        int lowestStudent = 0;
+        for(int i = 0; i < gradebook.length; i++)
+        {
+            if(gradebook[i] == lowestGrade)
+            {
+               lowestStudent =  (i + 1);            
+            }
+        }
+
         System.out.println("Average Grade: " + average(gradebook));
-
-
+        System.out.println("Student " + lowestStudent + " has the lowest grade with a" + lowestGrade);
         
         
     }
@@ -40,16 +51,42 @@ public class Gradebook
         return total / gradebook.length;
     }
 
-    public static int lowest(double[] gradebook)
+    public static double lowest(double[] gradebook)
     {
         double lowest = gradebook[0];
         for(int i = 0; i < gradebook.length; i++)
         {
-            if(gradebook[i] <= gradebook[i +1])
+            if(lowest <= gradebook[i])
             {
-                
+                lowest = gradebook[i];
             }
+            else
+            {
+                continue;
+            }
+
+              
         }
+        return lowest;
+    }
+
+
+    public static double highest(double[] gradebook)
+    {
+        double highest = gradebook[0];
+        for(int i = 0; i < gradebook.length; i++)
+        {
+            if(gradebook[i] >= highest)
+            {
+                highest = gradebook[i];
+            }
+            else
+            {
+                continue;
+            }
+  
+        }
+        return highest;
     }
 
 
