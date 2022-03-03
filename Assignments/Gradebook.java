@@ -45,8 +45,8 @@ public class Gradebook
         }
 
         System.out.println("Average Grade: " + average(gradebook));
-        System.out.println("Student " + lowestStudent + " has the lowest grade with a" + lowestGrade);
-        System.out.println("Student " + highestStudent + " has the highest grade with a" + highestGrade);
+        System.out.println("Student " + lowestStudent + " has the lowest grade with a " + lowestGrade);
+        System.out.println("Student " + highestStudent + " has the highest grade with a " + highestGrade);
         
         
     }
@@ -71,10 +71,7 @@ public class Gradebook
             {
                 lowest = gradebook[i];
             }
-            else
-            {
-                continue;
-            }
+            
 
               
         }
@@ -91,10 +88,7 @@ public class Gradebook
             {
                 highest = gradebook[i];
             }
-            else
-            {
-                continue;
-            }
+            
   
         }
         return highest;
