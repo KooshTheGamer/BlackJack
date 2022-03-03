@@ -34,8 +34,19 @@ public class Gradebook
             }
         }
 
+        double highestGrade = lowest(gradebook);
+        int highestStudent = 0;
+        for(int i = 0; i < gradebook.length; i++)
+        {
+            if(gradebook[i] == highestGrade)
+            {
+               highestStudent =  (i + 1);            
+            }
+        }
+
         System.out.println("Average Grade: " + average(gradebook));
         System.out.println("Student " + lowestStudent + " has the lowest grade with a" + lowestGrade);
+        System.out.println("Student " + highestStudent + " has the highest grade with a" + highestGrade);
         
         
     }
