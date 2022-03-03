@@ -70,10 +70,7 @@ public class Gradebook
             if(lowest <= gradebook[i])
             {
                 lowest = gradebook[i];
-            }
-            
-
-              
+            {}
         }
         return lowest;
     }
