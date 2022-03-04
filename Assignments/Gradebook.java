@@ -68,7 +68,7 @@ public class Gradebook
         double lowest = gradebook[0];
         for(int i = 0; i < gradebook.length; i++)
         {
-            if(lowest < gradebook[i])
+            if(lowest > gradebook[i])
             {
                 lowest = gradebook[i];
             }
